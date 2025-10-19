@@ -24,8 +24,9 @@ async fn main() {
             commands: vec![ping()],
             ..Default::default()
         })
-        .setup(|_ctx, _ready, _framework| {
+        .setup(|ctx, _ready, framework| {
             Box::pin(async move {
+                poise::builtins::register_globally(ctx, &framework.options().commands).await?;
                 println!("Bot ready!");
                 Ok(())
             })
