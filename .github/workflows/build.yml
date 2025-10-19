@@ -56,7 +56,7 @@ jobs:
       - name: Generate ThirdpartyLicenses.html
         run: |
           cargo install --locked cargo-about || true
-          cargo about generate about.hbs -o license.html
+          cargo about generate about.hbs -o ThirdpartyLicenses.html
       
       - name: build app
         run: |
