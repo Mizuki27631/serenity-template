@@ -2,5 +2,23 @@
 name = "serenity-template"
 version = "0.1.0"
 edition = "2024"
+publish = false
 
 [dependencies]
+serenity = { version = "0.12.4", default-features = false, features = [
+    "builder",
+    "cache",
+    "chrono",
+    "client",
+    "gateway",
+    "http",
+    "model",
+    "utils",
+    "rustls_backend",
+    "simd_json",
+] }
+tokio = { version = "1", features = ["full"] }
+anyhow = "1"
+thiserror = "2"
+serde = "1"
+serde_json = "1"
